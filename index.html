@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extraordinary Language Translator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="badge">🌍 Extraordinary Translator Experience</div>
+        <h1>Translate smarter with voice, speech, history, and beautiful UI</h1>
+        <p>
+          This premium language translator transforms ordinary text conversion into a rich multilingual experience.
+          It supports instant translation, language swap, text-to-speech, speech recognition, copy, download,
+          favorites history, and responsive design.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToTranslator()">Start Translating</button>
+          <button class="btn btn-secondary" onclick="clearAll()">Clear Everything</button>
+        </div>
+      </div>
+
+      <div class="stats-card">
+        <div>
+          <h2 style="margin-bottom: 10px;">Why this looks extraordinary</h2>
+          <p style="color: var(--muted); line-height: 1.7; font-size: 14px;">
+            Premium glassmorphism design, intelligent actions, live counters, voice tools, local history,
+            and polished micro-interactions for a standout portfolio project.
+          </p>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-box">
+            <h3>100+</h3>
+            <p>Language-ready structure</p>
+          </div>
+          <div class="mini-box">
+            <h3>Voice</h3>
+            <p>Speech recognition support</p>
+          </div>
+          <div class="mini-box">
+            <h3>Audio</h3>
+            <p>Listen to source or translated text</p>
+          </div>
+          <div class="mini-box">
+            <h3>History</h3>
+            <p>Saved locally in browser</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="translator-card" id="translatorSection">
+      <div class="toolbar">
+        <div class="select-box">
+          <select id="fromLang"></select>
+        </div>
+
+        <button class="swap-btn" id="swapBtn" title="Swap languages">⇄</button>
+
+        <div class="select-box">
+          <select id="toLang"></select>
+        </div>
+
+        <button class="btn btn-secondary" id="detectBtn">Auto Detect</button>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <div class="panel-header">
+            <span>Source Text</span>
+            <span class="char-count" id="inputCount">0 characters</span>
+          </div>
+          <textarea id="inputText" placeholder="Type or speak anything you want to translate..."></textarea>
+          <div class="panel-footer">
+            <div class="icon-actions">
+              <button class="icon-btn" id="micBtn">🎤 Speak</button>
+              <button class="icon-btn" id="copyInputBtn">📋 Copy</button>
+              <button class="icon-btn" id="speakInputBtn">🔊 Listen</button>
+              <button class="icon-btn" id="pasteBtn">📥 Paste</button>
+            </div>
+            <div class="status" id="micStatus">Ready</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <span>Translated Output</span>
+            <span class="status" id="translateStatus">Waiting for translation</span>
+          </div>
+          <div class="translated-output" id="outputText">Your translated text will appear here...</div>
+          <div class="panel-footer">
+            <div class="icon-actions">
+              <button class="icon-btn" id="copyOutputBtn">📋 Copy</button>
+              <button class="icon-btn" id="speakOutputBtn">🔊 Listen</button>
+              <button class="icon-btn" id="downloadBtn">⬇ Download</button>
+              <button class="icon-btn" id="saveHistoryBtn">⭐ Save</button>
+            </div>
+            <div class="status" id="outputInfo">Not translated yet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-actions">
+        <button class="btn btn-primary translate-btn" id="translateBtn">✨ Translate Now</button>
+        <button class="btn btn-secondary" id="clearBtn">Reset</button>
+      </div>
+    </section>
+
+    <section class="features-wrap">
+      <div class="feature-card">
+        <h3>⚡ Smart Features</h3>
+        <p>
+          Includes auto language selection, speech recognition, text-to-speech, instant copying, file download,
+          history saving, and seamless translation controls.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>🎨 Premium UI</h3>
+        <p>
+          Crafted with modern gradients, glassmorphism cards, smooth hover effects, mobile responsiveness,
+          and a polished dashboard-style layout that boosts portfolio quality.
+        </p>
+      </div>
+      <div class="history-card">
+        <h3>🕘 Recent Saved Translations</h3>
+        <div class="history-list" id="historyList">
+          <p style="color: var(--muted); font-size: 14px;">No saved translations yet.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
